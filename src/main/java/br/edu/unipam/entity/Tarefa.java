@@ -7,7 +7,7 @@ package br.edu.unipam.entity;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.io.Serializable;
 import javax.persistence.ManyToOne;
 
 /**
@@ -15,13 +15,21 @@ import javax.persistence.ManyToOne;
  * @author felipelsouza
  */
 @Entity
-public class Tarefa extends AbstractEntity {
+public class Tarefa extends AbstractEntity implements Serializable{
   private String Descricao;
   private LocalDate DataPrevista;
   private LocalDate DataTermino;
   
   @ManyToOne
   private Usuario usuario;
+
+  public Usuario getUsuario() {
+    return usuario;
+  }
+
+  public void setUsuario(Usuario usuario) {
+    this.usuario = usuario;
+  }
 
   public String getDescricao() {
     return Descricao;
