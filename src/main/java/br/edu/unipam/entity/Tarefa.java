@@ -16,11 +16,16 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class Tarefa extends AbstractEntity implements Serializable{
+  @NotNull  
+  @Size(min = 5, max = 100)
+  @Column(name = "DescricaoTarefa")
   private String Descricao;
+  @NotNull
   private LocalDate DataPrevista;
   private LocalDate DataTermino;
   
   @ManyToOne
+  @NotNull
   private Usuario usuario;
 
   public Usuario getUsuario() {
