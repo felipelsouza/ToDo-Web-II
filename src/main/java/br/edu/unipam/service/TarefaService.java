@@ -18,7 +18,7 @@ import javax.transaction.Transactional;
  *
  * @author felipelsouza
  */
-
+@Transactional
 public class TarefaService {
   @PersistenceContext(name = "pu_todo")
   private EntityManager entityManager;
